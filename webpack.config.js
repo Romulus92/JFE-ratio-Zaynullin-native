@@ -3,6 +3,7 @@ const fs = require('fs')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const HandlebarsPlugin = require("handlebars-webpack-plugin");
 
 // Main const
 // see more: https://github.com/vedees/webpack-template/blob/master/README.md#main-const
@@ -11,9 +12,6 @@ const PATHS = {
   dist: path.join(__dirname, './dist'),
   assets: 'assets/'
 }
-
-const PAGES_DIR = `${PATHS.src}/templates/pages/`
-const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.html'))
 
 const pathToSpriteIcons = path.resolve(__dirname, 'src/assets/img/icons/sprite');
 
@@ -110,9 +108,27 @@ module.exports = {
     // Automatic creation any html pages (Don't forget to RERUN dev server)
     // see more: https://github.com/vedees/webpack-template/blob/master/README.md#create-another-html-files
     // best way to create pages: https://github.com/vedees/webpack-template/blob/master/README.md#third-method-best
-    ...PAGES.map(page => new HtmlWebpackPlugin({
-      template: `${PAGES_DIR}/${page}`,
-      filename: `./${page}`
-    }))
+		new HandlebarsPlugin({
+			// path to hbs entry file(s). Also supports nested directories if write path.join(process.cwd(), "app", "src", "**", "*.hbs"),
+			entry: path.join(process.cwd(), "src", "handlebars", "pages", "*.hbs"),
+			// output path and filename(s). This should lie within the webpacks output-folder
+			// if ommited, the input filepath stripped of its extension will be used
+			output: path.join(process.cwd(), "src", "templates", "pages", "[name].html"),
+			// you can also add a [path] variable, which will emit the files with their relative path, like
+			// output: path.join(process.cwd(), "build", [path], "[name].html"),
+
+			// globbed path to partials, where folder/filename is unique
+			partials: [
+				path.join(process.cwd(), "src", "handlebars", "partials", "**", "*.hbs")
+			]
+		}),
+		new HtmlWebpackPlugin({
+			template: `./src/templates/pages/index.html`,
+			filename: `./index.html`
+		}),
+		new HtmlWebpackPlugin({
+			template: `./src/templates/pages/post.html`,
+			filename: `./post.html`
+		}),
   ],
 }
