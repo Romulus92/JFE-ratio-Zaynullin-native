@@ -8,15 +8,18 @@
 		"build": "webpack --mode=production --stats-children"
 	},
 	"devDependencies": {
+		"autoprefixer": "^10.3.3",
 		"clean-webpack-plugin": "^4.0.0-alpha.0",
 		"copy-webpack-plugin": "^9.0.1",
 		"css-loader": "^6.2.0",
+		"cssnano": "^5.0.8",
 		"esbuild-loader": "^2.15.1",
 		"handlebars": "^4.7.7",
 		"handlebars-loader": "^1.7.1",
 		"handlebars-webpack-plugin": "^2.2.1",
 		"html-loader": "^2.1.2",
 		"html-webpack-plugin": "^4.4.1",
+		"postcss-loader": "^6.1.1",
 		"style-loader": "^3.2.1",
 		"webpack": "^5.51.1",
 		"webpack-cli": "^4.8.0",
@@ -24,6 +27,7 @@
 	},
 	"dependencies": {
 		"file-loader": "^6.2.0",
+		"mini-css-extract-plugin": "^2.2.1",
 		"svg-sprite-loader": "^6.0.9",
 		"svg-transform-loader": "^2.0.13",
 		"svgo-loader": "^3.0.0"

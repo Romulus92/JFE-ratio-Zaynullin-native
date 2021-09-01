@@ -4,6 +4,9 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HandlebarsPlugin = require("handlebars-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
 
 // Main const
 // see more: https://github.com/vedees/webpack-template/blob/master/README.md#main-const
@@ -41,7 +44,27 @@ module.exports = {
     	},
 			{
 				test: /\.css$/i,
-				use: ['style-loader', 'css-loader'],
+				use: [
+					'style-loader',
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							esModule: false,
+						},
+					},
+					'css-loader',
+					{
+						loader: 'postcss-loader',
+						options: {
+							postcssOptions: {
+								plugins: [
+									autoprefixer(),
+									cssnano(),
+								],
+							},
+						},
+					},
+				]
     	}, 
 			{
 				test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
@@ -129,6 +152,9 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: `./src/templates/pages/post.html`,
 			filename: `./post.html`
+		}),
+		new MiniCssExtractPlugin({
+			filename: 'styles/style.css',
 		}),
   ],
 }

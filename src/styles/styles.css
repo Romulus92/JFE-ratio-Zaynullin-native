@@ -1,1 +1,5 @@
+@import './common/_fonts.css';
+@import './common/_normalize.css';
+@import './common/_base.css';
+
 @import './partials/header.css';
