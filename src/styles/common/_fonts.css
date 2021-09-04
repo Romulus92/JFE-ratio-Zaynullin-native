@@ -2,19 +2,19 @@
   font-weight: normal;
   font-family: 'LibreBaskerville-Regular';
   font-style: normal;
-  src: url('../../assets/fonts/LibreBaskerville/LibreBaskerville-Regular.woff') format('woff'), url('../../assets/fonts/LibreBaskerville/LibreBaskerville-Regular.woff2') format('woff2');
+  src: url('@/assets/fonts/LibreBaskerville-Regular.woff2') format('woff2'), url('@/assets/fonts/LibreBaskerville-Regular.woff') format('woff');
 }
 
 @font-face {
   font-weight: 700;
   font-family: 'LibreBaskerville-Bold';
   font-style: normal;
-  src: url('../../assets/fonts/LibreBaskerville/LibreBaskerville-Bold.woff') format('woff'), url('../../assets/fonts/LibreBaskerville/LibreBaskerville-Bold.woff2') format('woff2');
+  src: url('@/assets/fonts/LibreBaskerville-Bold.woff2') format('woff2'), url('@/assets/fonts/LibreBaskerville-Bold.woff') format('woff');
 }
 
 @font-face {
   font-weight: normal;
   font-family: 'OpenSans-Regular';
   font-style: normal;
-  src: url('../../assets/fonts/OpenSans/OpenSans-Regular.woff') format('woff'), url('../../assets/fonts/OpenSans/OpenSans-Regular.woff2') format('woff2');
+  src: url('@/assets/fonts/OpenSans-Regular.woff2') format('woff2'), url('@/assets/fonts/OpenSans-Regular.woff') format('woff');
 }

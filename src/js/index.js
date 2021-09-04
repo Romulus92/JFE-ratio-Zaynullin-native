@@ -4,7 +4,7 @@ import '../styles/styles.css';
 
 // --------------------------- [[ Scripts ]] --------------------------
 import Handlebars from 'handlebars/dist/handlebars';
-const Posts = require('../handlebars/partials/posts.hbs');
+const Posts = require('../handlebars/posts.hbs');
 
 // Icons sprite
 const svgModules = require.context('../assets/img/icons/sprite', false, /\.svg$/);
@@ -16,8 +16,6 @@ const func = {
       .then((response) => {
         return response.json();
       })
-    console.log(postsData);
-    console.log(Posts);
 
     const postsContainer = document.querySelector('#posts');
     postsContainer.innerHTML = Posts({posts: postsData});
