@@ -8,10 +8,11 @@ body {
   overflow-x: hidden;
   color: black;
   font-size: 1.6rem;
-	font-family: 'OpenSans-Regular';
+	font-family: 'OpenSans-Regular', Arial, Helvetica, sans-serif;
   line-height: 1.5;
   direction: ltr;
   background: white;
+  overflow-x: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: auto;
   -osx-font-smoothing: grayscale;
