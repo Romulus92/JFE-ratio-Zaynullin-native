@@ -3,7 +3,6 @@
 import '../styles/styles.css';
 
 // --------------------------- [[ Scripts ]] --------------------------
-import Handlebars from 'handlebars/dist/handlebars';
 const Posts = require('../handlebars/posts.hbs');
 const TopPost = require('../handlebars/top-post.hbs');
 
@@ -13,10 +12,12 @@ svgModules.keys().forEach(svgModules);
 
 const func = {
   async getPosts() {
-    const postsData = await fetch('https://jsonplaceholder.typicode.com/posts')
+    const postsFetch = await fetch('https://jsonplaceholder.typicode.com/posts')
       .then((response) => {
         return response.json();
       })
+
+    const postsData = postsFetch.slice(0, 3);
 
     const postsContainer = document.querySelector('#posts');
     postsContainer.innerHTML = Posts({posts: postsData});

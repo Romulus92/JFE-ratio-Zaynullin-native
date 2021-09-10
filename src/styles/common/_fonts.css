@@ -18,3 +18,10 @@
   font-style: normal;
   src: url('@/assets/fonts/OpenSans-Regular.woff2') format('woff2'), url('@/assets/fonts/OpenSans-Regular.woff') format('woff');
 }
+
+@font-face {
+  font-weight: 700;
+  font-family: 'OpenSans-Bold';
+  font-style: normal;
+  src: url('@/assets/fonts/OpenSans-Bold.woff2') format('woff2'), url('@/assets/fonts/OpenSans-Bold.woff') format('woff');
+}
