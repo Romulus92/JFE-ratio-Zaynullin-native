@@ -1,0 +1,21 @@
+.focus {
+	margin-bottom: 2.5rem;
+}
+
+.focus__content {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	background-image: url('@/assets/img/article_focus.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 5.5rem 7.8rem;
+	transition: all 1s ease-in-out;
+}
+
+.focus__post {
+	width: 38.6%;
+	padding: 7.5rem 4rem;
+	background-color: white;
+}

@@ -1,0 +1,13 @@
+.hero {
+	margin-bottom: 5rem;
+}
+
+.hero__picture img {
+	width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+	.hero {
+		margin-bottom: 2rem;
+	}
+}
