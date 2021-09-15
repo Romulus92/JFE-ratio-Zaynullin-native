@@ -1,12 +1,13 @@
+.body {
+	margin-bottom: 7.2rem;
+}
+
 .body__content {
 	width: 65rem;
 	margin: 0 auto;
 }
 
 .body__heading {
-	margin-bottom: 1.7rem;
-	font-size: 4.2rem;
-	line-height: 5.2rem;
 	text-align: center;
 }
 
@@ -34,6 +35,9 @@
 .body__text {
 	font-size: 1.6rem;
 	line-height: 2.4rem;
+}
+
+.body__text:not(:last-of-type) {
 	margin-bottom: 2.4rem;
 }
 

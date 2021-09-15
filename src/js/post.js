@@ -6,6 +6,10 @@ import '../styles/post.css';
 // --------------------------- [[ Scripts ]] --------------------------
 const Body = require('../handlebars/post/body.hbs');
 
+// Icons sprite
+const svgModules = require.context('../assets/img/icons/sprite', false, /\.svg$/);
+svgModules.keys().forEach(svgModules);
+
 const func = {
   async getBody() {
     const bodyData = await fetch('https://jsonplaceholder.typicode.com/posts/1')

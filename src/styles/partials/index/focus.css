@@ -18,4 +18,56 @@
 	width: 38.6%;
 	padding: 7.5rem 4rem;
 	background-color: white;
+	cursor: pointer;
+	border: 5px solid transparent;
+	transition: all 0.5s ease-in-out;
+}
+
+.focus__post:hover {
+	border-color: black;
+}
+
+.focus__post:hover .post__type, .focus__post:hover .post__info {
+	color: rgba(28, 28, 28, 1);
+}
+
+@media screen and (max-width: 1200px) {
+	.focus__post {
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 980px) {
+	.focus__post {
+		width: 65%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.focus__post {
+		width: 80%;
+	}
+}
+
+@media screen and (max-width: 575px) {
+	.focus__content {
+		padding: 0;
+		background-image: none;
+	}
+
+	.focus__post {
+		width: 100%;
+		margin-left: 0;
+		margin-bottom: 0;
+		padding: 0;
+	}
+
+	.focus__post-picture {
+		display: block;
+		width: 100%;
+	}
+
+	.focus__post-picture img {
+		width: 100%;
+	}
 }

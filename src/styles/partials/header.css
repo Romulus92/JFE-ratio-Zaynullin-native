@@ -10,12 +10,32 @@
 	font-family: "LibreBaskerville-Regular", Arial, Helvetica, sans-serif;
 }
 
-.header__menu li:not(:last-of-type) {
+.header__menu a {
+	position: relative;
+	display: block;
+}
+
+.header__menu a:after {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0%;
+	height: .2rem;
+	transition: all 0.5s ease-in-out;
+	background: black;
+	content: "";
+}
+
+.header__menu a:not(:last-of-type) {
 	margin-right: 3.1rem;
 }
 
-.header__menu li.active {
+.header__menu a.active {
 	font-family: "LibreBaskerville-Bold", Arial, Helvetica, sans-serif;
+}
+
+.header__menu a:hover:after {
+	width: 100%;
 }
 
 .header__logo {

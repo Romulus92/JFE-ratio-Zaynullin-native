@@ -17,6 +17,17 @@
 	margin-bottom: 11rem;
 	padding: 7.5rem 4rem;
 	background-color: white;
+	cursor: pointer;
+	border: 5px solid transparent;
+	transition: all 0.5s ease-in-out;
+}
+
+.featured__post:hover {
+	border-color: black;
+}
+
+.featured__post:hover .post__type, .featured__post:hover .post__info {
+	color: rgba(28, 28, 28, 1);
 }
 
 .featured__post-picture {

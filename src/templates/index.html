@@ -8,19 +8,19 @@
 </head>
 <body>
 	<header class="header container">
-		<div class="header__logo">
+		<a href='/' class="header__logo">
 			<div class="header__logo-rect"></div>
 			<span class="header__logo-text"><span>nu</span>ntium.</span>
-		</div>
-		<ul class="header__menu">
-			<li>Home</li>
-			<li>Tags</li>
-			<li>About</li>
-		</ul>
+		</a>
+		<nav class="header__menu">
+			<a href='/'>Home</a>
+			<a>Tags</a>
+			<a>About</a>
+		</nav>
 	</header>
 	<section class="featured container">
 		<div class="featured__content">
-			<div class="featured__post single-post"></div>
+			<div class="featured__post" id="top-post"></div>
 		</div>
 	</section>
 	<section class="posts container">
@@ -29,7 +29,7 @@
 	</section>
 	<section class="focus container">
 		<div class="focus__content">
-			<div class="focus__post single-post"></div>
+			<div class="focus__post" id="focus-post"></div>
 		</div>
 	</section>
 </body>

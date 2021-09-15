@@ -15,6 +15,8 @@ const PATHS = {
   assets: 'assets/'
 }
 
+const pathToSpriteIcons = path.resolve(__dirname, 'src/assets/img/icons/sprite');
+
 const PAGES_DIR = `${PATHS.src}/templates/`;
 const PAGES = fs.readdirSync(PAGES_DIR).filter((fileName) => fileName.endsWith('.html'));
 
@@ -80,11 +82,44 @@ module.exports = {
 				},
 			},
 			{
-				test: /(\.(jpe?g|png|webp|gif|svg)|\.svg)$/,
+				test: /(\.(jpe?g|png|webp|gif)|\.svg)$/,
 				type: 'asset/resource',
 				generator: {
 					filename: 'assets/img/[name][ext]',
 				},
+			},
+			{
+				test: /\.svg$/,
+				include: [
+					pathToSpriteIcons,
+				],
+				use: [
+					{
+						loader: 'svg-sprite-loader',
+						options: {
+
+						},
+					},
+					'svg-transform-loader',
+					{
+						loader: 'svgo-loader',
+						options: {
+							plugins: [
+								{
+									removeViewBox: false,
+								},
+								{
+									removeDimensions: true,
+								},
+								{
+									removeAttrs: {
+										attrs: '(stroke|fill)',
+									},
+								},
+							],
+						},
+					},
+				],
 			},
 		]
   },

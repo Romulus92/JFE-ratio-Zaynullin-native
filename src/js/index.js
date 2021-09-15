@@ -5,7 +5,8 @@ import '../styles/index.css';
 
 // --------------------------- [[ Scripts ]] --------------------------
 const Posts = require('../handlebars/index/posts.hbs');
-const SinglePost = require('../handlebars/index/single-post.hbs');
+const TopPost = require('../handlebars/index/top-post.hbs');
+const FocusPost = require('../handlebars/index/focus-post.hbs');
 
 const func = {
   async getPosts() {
@@ -19,24 +20,31 @@ const func = {
     const postsContainer = document.querySelector('#posts');
     postsContainer.innerHTML = Posts({posts: postsData});
   },
-  async getSinglePost() {
-    const singlePostData = await fetch('https://jsonplaceholder.typicode.com/posts/1')
+  async getTopPost() {
+    const topPostData = await fetch('https://jsonplaceholder.typicode.com/posts/1')
       .then((response) => {
         return response.json();
       })
 
-    const singlePosts = document.querySelectorAll('.single-post');
+    const topPostContainer = document.querySelector('#top-post');
+    topPostContainer.innerHTML = TopPost({post: topPostData});
+  },
+  async getFocusPost() {
+    const topFocusData = await fetch('https://jsonplaceholder.typicode.com/posts/15')
+      .then((response) => {
+        return response.json();
+      })
 
-    singlePosts.forEach((singlePostContainer) => {
-      singlePostContainer.innerHTML = SinglePost({post: singlePostData});
-    })
+    const focusPostContainer = document.querySelector('#focus-post');
+    focusPostContainer.innerHTML = FocusPost({post: topFocusData});
   }
 };
 
 const app = {
   init: () => {
     func.getPosts();
-    func.getSinglePost();
+    func.getTopPost();
+    func.getFocusPost();
   },
   scroll: () => {},
   load: () => {},

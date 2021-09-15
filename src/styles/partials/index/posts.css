@@ -31,6 +31,16 @@
 
 .posts__item {
 	display: flex;
+	transition: all 0.3s ease-in-out;
+	cursor: pointer;
+}
+
+.posts__item:hover .post__type, .posts__item:hover .post__info {
+	color: rgba(28, 28, 28, 1);
+}
+
+.posts__item:hover .post__image {
+	transform: scale(1.02);
 }
 
 .posts__item:not(:last-of-type) {

@@ -1,0 +1,141 @@
+.navigation {
+	display: flex;
+	justify-content: space-between;
+}
+
+.navigation__item {
+	display: flex;
+	justify-content: space-between;
+}
+
+.navigation__item-arrow {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 15rem;
+	height: 15rem;
+	background: black;
+}
+
+.navigation__item_prev .navigation__item-arrow {
+	margin-right: 3.5rem;
+}
+
+.navigation__item_next .navigation__item-arrow {
+	margin-left: 3.5rem;
+}
+
+.navigation__item_next .navigation__item-arrow svg {
+	transform: rotate(180deg);
+}
+
+.navigation__item-arrow svg {
+	width: 6.7rem;
+	height: 100%;
+	fill: none;
+	stroke: white;
+}
+
+.navigation__item-info {
+	display: flex;
+	align-items: center;
+}
+
+.navigation__item-text {
+	font-size: 2rem;
+	line-height: 2.5rem;
+}
+
+.navigation__item-text b {
+  font-family: 'LibreBaskerville-Bold';
+	font-weight: 700;
+}
+
+@media screen and (max-width: 1200px) {
+	.navigation__item-arrow {
+		width: 10rem;
+		height: 10rem;
+	}
+
+	.navigation__item-arrow svg {
+		width: 4.5rem;
+	}
+
+	.navigation__item-text {
+		font-size: 1.8rem;
+		line-height: 2.2rem;
+	}
+}
+
+@media screen and (max-width: 980px) {
+	.navigation__item {
+		width: 100%;
+		height: 10rem;
+	}
+
+	.navigation__item_prev .navigation__item-arrow {
+		margin-right: 2rem;
+	}
+	
+	.navigation__item_next .navigation__item-arrow {
+		margin-left: 2rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.navigation__item {
+		height: 5rem;
+		width: 47%;
+	}
+
+	.navigation__item-arrow {
+		width: 5rem;
+		height: 5rem;
+	}
+
+	.navigation__item-arrow svg {
+		width: 1.5rem;
+	}
+
+	.navigation__item_prev .navigation__item-arrow {
+		margin-right: 1rem;
+	}
+	
+	.navigation__item_next .navigation__item-arrow {
+		margin-left: 1rem;
+	}
+
+	.navigation__item-text {
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.navigation__item {
+		height: 4rem;
+		width: 49%;
+	}
+
+	.navigation__item-arrow {
+		width: 4rem;
+		height: 4rem;
+	}
+
+	.navigation__item-arrow svg {
+		width: 1rem;
+	}
+
+	.navigation__item_prev .navigation__item-arrow {
+		margin-right: 1rem;
+	}
+	
+	.navigation__item_next .navigation__item-arrow {
+		margin-left: 1rem;
+	}
+
+	.navigation__item-text {
+		font-size: 1.2rem;
+		line-height: 1.8rem;
+	}
+}

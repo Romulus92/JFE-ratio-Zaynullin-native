@@ -1,0 +1,25 @@
+h1, .h1 {
+	font-size: 4.2rem;
+	line-height: 5.2rem;
+  font-family: 'LibreBaskerville-Bold';
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 1.7rem;
+}
+
+h1::first-letter, .h1::first-letter {
+	text-transform: uppercase;
+}
+
+h2, .h2 {
+	font-size: 3.3rem;
+	line-height: 4.1rem;
+  font-family: 'LibreBaskerville-Bold';
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 1.2rem;
+}
+
+h2::first-letter, .h2::first-letter {
+	text-transform: uppercase;
+}
