@@ -8,6 +8,10 @@
 	justify-content: space-between;
 }
 
+.navigation__item:hover .navigation__item-text:after {
+	width: 100%;
+}
+
 .navigation__item-arrow {
 	display: flex;
 	justify-content: center;
@@ -17,16 +21,16 @@
 	background: black;
 }
 
-.navigation__item_prev .navigation__item-arrow {
-	margin-right: 3.5rem;
-}
-
-.navigation__item_next .navigation__item-arrow {
-	margin-left: 3.5rem;
+.navigation__item_prev:hover svg {
+	transform: translateX(-20%);
 }
 
 .navigation__item_next .navigation__item-arrow svg {
 	transform: rotate(180deg);
+}
+
+.navigation__item_next:hover svg {
+	transform: rotate(180deg) translateX(-20%);
 }
 
 .navigation__item-arrow svg {
@@ -34,16 +38,31 @@
 	height: 100%;
 	fill: none;
 	stroke: white;
+	transition: all 0.3s ease-in-out;
 }
 
 .navigation__item-info {
 	display: flex;
 	align-items: center;
+	padding: 0 4rem;
+	transition: all 0.3s ease-in-out;
 }
 
 .navigation__item-text {
+	position: relative;
 	font-size: 2rem;
 	line-height: 2.5rem;
+}
+
+.navigation__item-text:after {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0%;
+	height: .2rem;
+	background: black;
+	content: "";
+	transition: all 0.8s ease-in-out;
 }
 
 .navigation__item-text b {
@@ -65,6 +84,10 @@
 		font-size: 1.8rem;
 		line-height: 2.2rem;
 	}
+
+	.navigation__item-info {
+		padding: 0 3rem;
+	}
 }
 
 @media screen and (max-width: 980px) {
@@ -73,12 +96,12 @@
 		height: 10rem;
 	}
 
-	.navigation__item_prev .navigation__item-arrow {
-		margin-right: 2rem;
+	.navigation__item-info {
+		padding: 0 2rem;
 	}
-	
-	.navigation__item_next .navigation__item-arrow {
-		margin-left: 2rem;
+
+	.navigation__item-text:after {
+		display: none;
 	}
 }
 
@@ -97,17 +120,13 @@
 		width: 1.5rem;
 	}
 
-	.navigation__item_prev .navigation__item-arrow {
-		margin-right: 1rem;
-	}
-	
-	.navigation__item_next .navigation__item-arrow {
-		margin-left: 1rem;
-	}
-
 	.navigation__item-text {
 		font-size: 1.5rem;
 		line-height: 2rem;
+	}
+
+	.navigation__item-info {
+		padding: 0 1rem;
 	}
 }
 
@@ -126,16 +145,12 @@
 		width: 1rem;
 	}
 
-	.navigation__item_prev .navigation__item-arrow {
-		margin-right: 1rem;
-	}
-	
-	.navigation__item_next .navigation__item-arrow {
-		margin-left: 1rem;
-	}
-
 	.navigation__item-text {
 		font-size: 1.2rem;
 		line-height: 1.8rem;
+	}
+
+	.navigation__item-info {
+		padding: 0 1rem;
 	}
 }

@@ -7,8 +7,12 @@
 	background-image: url('@/assets/img/article.jpg');
 	background-position: center center;
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: auto 100%;
 	transition: all 1s ease-in-out;
+}
+
+.featured__content:hover {
+	background-size: auto 105%;
 }
 
 .featured__post {
@@ -22,11 +26,11 @@
 	transition: all 0.5s ease-in-out;
 }
 
-.featured__post:hover {
+.featured__content:hover .featured__post {
 	border-color: black;
 }
 
-.featured__post:hover .post__type, .featured__post:hover .post__info {
+.featured__content:hover .featured__post .post__type, .featured__content:hover .featured__post .post__info {
 	color: rgba(28, 28, 28, 1);
 }
 
@@ -112,6 +116,7 @@
 		margin-left: 0;
 		margin-bottom: 0;
 		padding: 0;
+		border: none;
 	}
 
 	.featured__post-picture {

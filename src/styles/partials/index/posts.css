@@ -30,8 +30,11 @@
 }
 
 .posts__item {
-	display: flex;
 	transition: all 0.3s ease-in-out;
+}
+
+.posts__link {
+	display: flex;
 	cursor: pointer;
 }
 
@@ -52,7 +55,7 @@
 		width: 70%;
 	}
 
-	.posts__item {
+	.posts__link {
 		flex-direction: column;
 	}
 }
