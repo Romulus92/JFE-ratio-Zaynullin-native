@@ -106,15 +106,21 @@ module.exports = {
 						options: {
 							plugins: [
 								{
-									removeViewBox: false,
-								},
-								{
-									removeDimensions: true,
-								},
-								{
-									removeAttrs: {
-										attrs: '(stroke|fill)',
+									name: 'preset-default',
+									params: {
+										overrides: {
+											removeViewBox: false,
+										},
 									},
+								},
+								{
+									name: 'removeDimensions'
+								},
+								{
+									name: 'removeAttrs',
+									params: {
+										'attrs': '(stroke|fill)',
+									}
 								},
 							],
 						},
