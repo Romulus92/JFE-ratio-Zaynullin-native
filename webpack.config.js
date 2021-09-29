@@ -2,7 +2,6 @@ const path = require('path');
 const fs = require('fs');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
@@ -32,8 +31,21 @@ module.exports = {
   output: {
     filename: `js/[name].js`,
     path: PATHS.dist,
-		publicPath: '/'
+		publicPath: '/',
+		clean: true,
   },
+	optimization: {
+    splitChunks: {
+			chunks: "initial",
+			cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+		}
+	},
 	resolve: {
 		alias: {
 			'@': path.resolve('./src'),
@@ -83,6 +95,7 @@ module.exports = {
 			},
 			{
 				test: /(\.(jpe?g|png|webp|gif)|\.svg)$/,
+				exclude: pathToSpriteIcons,
 				type: 'asset/resource',
 				generator: {
 					filename: 'assets/img/[name][ext]',
@@ -135,7 +148,6 @@ module.exports = {
 				{ from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.dist}/${PATHS.assets}img` },
 			]
 		}),
-    new CleanWebpackPlugin(),
     // Automatic creation any html pages (Don't forget to RERUN dev server)
     // see more: https://github.com/vedees/webpack-template/blob/master/README.md#create-another-html-files
     // best way to create pages: https://github.com/vedees/webpack-template/blob/master/README.md#third-method-best
@@ -143,7 +155,7 @@ module.exports = {
 			filename: `./${page}`,
 			template: `${PAGES_DIR}/${page}`,
 			chunks: [
-				page
+				page.replace(/\.html/, '')
 			],
 		})),
 		new MiniCssExtractPlugin({

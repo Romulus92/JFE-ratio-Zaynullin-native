@@ -38,7 +38,8 @@ module.exports = {
   output: {
     filename: `js/[name].js`,
     path: PATHS.dist,
-		publicPath: '/'
+		publicPath: '/',
+		clean: true,
   },
 	optimization: {
     splitChunks: {
@@ -162,7 +163,7 @@ module.exports = {
 			filename: `./${page}`,
 			template: `${PAGES_DIR}/${page}`,
 			chunks: [
-				page.replace('.html', '')
+				page.replace(/\.html/, '')
 			],
 		})),
 		new MiniCssExtractPlugin({
